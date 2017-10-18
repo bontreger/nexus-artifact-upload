@@ -1,0 +1,16 @@
+---
+- name: "Upload artifact to nexus"
+  hosts: localhost
+
+  tasks:
+  - name: "Include vars files"
+    include_vars:
+      dir: '../vars'
+
+  - name: Upload to nexus (Maven)
+    command: "mvn deploy:deploy-file -DgroupId={{ group_ID }} -DartifactId={{ artifact_ID }} -Dversion={{ version }} -DgeneratePom={{ generate_POM }} -Dpackaging={{ packaging }} -DrepositoryId={{ repo_ID }} -Durl={{ nexus_url }} -Dfile={{ target_file }}"
+    when: upload_method == "maven"
+
+  - name: Upload to nexus (Curl)
+    command: "curl -v -u {{ username }}:{{ password }} --upload-file {{ target_file }} {{ nexus_url }}/{{ group_ID }}/{{ artifact_ID }}/{{ version }}/{{ filename }}"
+    when: upload_method == "curl"

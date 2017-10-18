@@ -1,0 +1,14 @@
+galaxy_info:
+  author: Ryan Bontreger
+  description: A simple role for uploading files to Nexus
+  company: Red Hat Consulting
+
+  issue_tracker_url: https://github.com/bontreger/nexus-artifact-upload/issues
+
+  license: license (GPLv2, CC-BY, etc)
+
+  min_ansible_version: 2.3
+
+  galaxy_tags: ["nexus"]
+
+dependencies: []

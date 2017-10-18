@@ -1,0 +1,17 @@
+---
+# The directory structure in Nexus is /repository/{{ repository_name }}/{{ group_ID }}/{{ artifact_ID }}/{{ version }}/<file>.{{ packaging }}
+repository_name: thirdparty
+group_ID: com.oracle.jdk.solaris.sparc
+artifact_ID: jdk1.7.0_91
+version: 1
+generate_POM: true
+packaging: tar
+repo_ID: nexus
+nexus_url: "http://nexus.local/repository/{{ repository_name }}"
+# LOCATION ON LOCALHOST
+target_file: "/root/nexus/upload/jdk1.7.0_91.tar"
+upload_method: maven
+# Only needed when using curl
+username: ### INSERT USERNAME ###
+password: ### INSERT PASSWORD ###
+filename: "jdk1.7.0_91.tar"
