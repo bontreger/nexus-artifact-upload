@@ -1,4 +1,4 @@
-Role Name
+nexus-artifact-upload
 =========
 
 A local role to upload files to nexus
